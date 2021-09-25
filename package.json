@@ -1,7 +1,7 @@
 {
   "name": "Bad-Bank",
   "version": "1.0.0",
-  "description": "",
+  "description": "A project for an MIT xPro Full-Stack development course",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,8 +11,8 @@
     "url": "git+https://github.com/greg4shaw/Bad-Bank.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "gman.international@gmail.com",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/greg4shaw/Bad-Bank/issues"
   },

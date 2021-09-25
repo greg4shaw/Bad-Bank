@@ -15,7 +15,7 @@ function Spa() {
             <Route path="/balance/" exact component={Balance} />
             <Route path="/CreateAccount/" exact component={CreateAccount} />
             <Route path="/deposit/" exact component={Deposit} />
-            <Route path="/home/" exact component={Home} />
+            {/* <Route path="/home/" exact component={Home} /> */}
             <Route path="/login/" exact component={Login} />
             <Route path="/withdraw/" exact component={Withdraw} />
           </div>
