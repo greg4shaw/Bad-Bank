@@ -6,7 +6,7 @@ function Deposit(){
       <Card
         bgcolor="warning"
         header="Deposit"
-        //status={status}
+        status={status}
         body={show ? 
           <DepositForm setShow={setShow} setStatus={setStatus}/> :
           <DepositMsg setShow={setShow} setStatus={setStatus}/>}
@@ -38,7 +38,7 @@ function Deposit(){
       .then(text => {
           try {
               const data = JSON.parse(text);
-              props.setStatus(JSON.stringify(data.value));
+              props.setStatus(JSON.stringify(data.value.email));
               props.setShow(false);
               console.log('JSON:', data);
           } catch(err) {
