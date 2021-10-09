@@ -1,3 +1,4 @@
+// ORIGINAL CODE
 // Define our top most component
 // Single Page Application
 // Deprecation warnings node --trace-deprecation node_modules/.bin/webpack
