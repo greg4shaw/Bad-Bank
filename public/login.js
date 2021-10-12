@@ -22,6 +22,7 @@ function LoginMsg(props){
       onClick={() => props.setShow(true)}>
         Authenticate again
     </button>
+      {/* <div>{JSON.stringify(ctx.user)}</div> */}
     {/* <button type="submit" 
       className="btn btn-light" onClick={handleLogout}>Logout</button> */}
   </>);
@@ -32,6 +33,7 @@ function LoginForm(props){
   const [email, setEmail]     = React.useState('');
   const [password, setPassword]     = React.useState('');
   const [err, setErr]     = React.useState('');
+  //const ctx = React.useContext(UserContext);
   //const [uid, setUid]     = React.useState();
 
   const firebaseConfig = {
@@ -49,7 +51,7 @@ function LoginForm(props){
     firebase.auth().createUserWithEmailAndPassword(email, password)
   .then((userCredential) => {
     var user = userCredential.user;
-    console.log("user" + user)
+    console.log(user.email)
     props.setShow(false);
   })
   .catch((error) => {
@@ -60,20 +62,22 @@ function LoginForm(props){
   });
 }
 
-    const handleLogin = (e) => {
-      firebase.auth().signInWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-      var user = userCredential.user;
-        console.log("user" + user)
-        props.setShow(false);
-        })
-        .catch((e) => {
-          console.log(e.message)
-          setErr(e.message)
-          setEmail('')
-          setPassword('')
-        });
-      }
+const handleLogin = (e) => {
+  firebase.auth().signInWithEmailAndPassword(email, password)
+  .then((userCredential) => {
+  var user = userCredential.user;
+    console.log('User1' + user.email)
+    ctx.user = user.email
+    console.log(ctx.user)
+    props.setShow(false);
+    })
+    .catch((e) => {
+      console.log(e.message)
+      setErr(e.message)
+      setEmail('')
+      setPassword('')
+    });
+  }
 
   //Google Login
   const handleGoogle = (e) => {
@@ -119,7 +123,7 @@ function LoginForm(props){
     // }})
 
 
-console.log(email, password)
+//console.log(email, password)
 
 return (
     // <Card
