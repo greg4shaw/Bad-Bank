@@ -1,6 +1,11 @@
+//import React from "react";
+//import { UserContext } from "./context";
+
 function Deposit(){
     const [show, setShow]     = React.useState(true);
-    const [status, setStatus] = React.useState('');  
+    const [status, setStatus] = React.useState(''); 
+    const ctx = React.useContext(UserContext);
+    console.log('User' + ctx.users[0].email) 
   
     return (
       <Card

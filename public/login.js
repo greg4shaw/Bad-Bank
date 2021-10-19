@@ -1,7 +1,8 @@
 function Login(){
   const [show, setShow]     = React.useState(true);
   const [status, setStatus] = React.useState('');    
-
+  
+  
   return (
     <Card
       bgcolor="secondary"
@@ -33,7 +34,7 @@ function LoginForm(props){
   const [email, setEmail]     = React.useState('');
   const [password, setPassword]     = React.useState('');
   const [err, setErr]     = React.useState('');
-  //const ctx = React.useContext(UserContext);
+  const ctx = React.useContext(UserContext);
   //const [uid, setUid]     = React.useState();
 
   const firebaseConfig = {
@@ -66,9 +67,9 @@ const handleLogin = (e) => {
   firebase.auth().signInWithEmailAndPassword(email, password)
   .then((userCredential) => {
   var user = userCredential.user;
-    console.log('User1' + user.email)
-    ctx.user = user.email
-    console.log(ctx.user)
+    console.log('Google user' + user.email)
+    ctx.users[0].email = user.email
+    console.log('Context user' + ctx.users[0].email)
     props.setShow(false);
     })
     .catch((e) => {
